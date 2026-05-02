@@ -1,0 +1,46 @@
+{{ define "main" }}
+  {{ with .Content }}
+  <article class="markdown">
+    {{ . }}
+  </article>
+  {{ end }}
+
+  {{ range .Paginator.Pages.ByDate.Reverse }}
+  <article class="book-post markdown career-list-item">
+    <h2>
+      <a href="{{ .RelPermalink }}">{{ partial "docs/title" . }}</a>
+    </h2>
+    {{ partial "docs/post-meta" . }}
+
+    <div class="career-chips">
+      {{ with .Params.category }}<a class="book-btn" href="{{ (printf "categories/%s/" (urlize .)) | relURL }}">{{ . }}</a>{{ end }}
+      {{ range first 4 .Params.tags }}<a class="book-btn" href="{{ (printf "tags/%s/" (urlize .)) | relURL }}">#{{ . }}</a>{{ end }}
+    </div>
+
+    <div class="career-list-summary">
+      {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+      <div class="career-inline-facts">
+        {{ with .Params.salary_range }}<span>{{ . }}</span>{{ end }}
+        {{ with .Params.salary_scope }}<span>{{ . }}</span>{{ end }}
+      </div>
+    </div>
+  </article>
+  {{ end }}
+{{ end }}
+
+{{ define "toc-container" }}
+<aside class="book-toc">
+  <div class="book-toc-content">
+    {{ template "toc" . }}
+  </div>
+</aside>
+{{ end }}
+
+{{ define "toc" }}
+  {{ partial "docs/taxonomy" . }}
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "docs/pagination.html" . }}
+{{ end }}
+

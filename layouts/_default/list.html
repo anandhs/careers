@@ -1,0 +1,26 @@
+{{ define "main" }}
+  {{ if eq .Kind "taxonomy" }}
+  <article class="markdown book-article">
+    <h1>{{ partial "docs/title" . }}</h1>
+    {{ with .Content }}{{ . }}{{ end }}
+
+    <ul class="career-term-list">
+      {{ range .Data.Terms.Alphabetical }}
+      <li class="career-term-item">
+        <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+        <span>{{ .Count }} careers</span>
+      </li>
+      {{ end }}
+    </ul>
+  </article>
+  {{ else }}
+  <article class="markdown book-article">
+    {{- .Content -}}
+  </article>
+  {{ end }}
+{{ end }}
+
+{{ define "toc" }}
+  {{ partial "docs/toc" . }}
+{{ end }}
+

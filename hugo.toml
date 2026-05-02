@@ -1,0 +1,59 @@
+baseURL = "https://anandhs.github.io/careers/"
+languageCode = "en-us"
+title = "Career Atlas"
+theme = "hugo-book"
+
+[pagination]
+  pagerSize = 12
+
+enableRobotsTXT = true
+disablePathToLower = true
+
+[taxonomies]
+  categories = "categories"
+  tag = "tags"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.before]]
+    name = "Home"
+    url = "/"
+    weight = -1
+
+  [[menu.before]]
+    name = "All careers"
+    url = "/posts/"
+    weight = 1
+
+  [[menu.before]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 2
+
+  [[menu.before]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 3
+
+  [[menu.before]]
+    name = "Archive"
+    url = "/archives/"
+    weight = 4
+
+  [[menu.before]]
+    name = "About"
+    url = "/about/"
+    weight = 5
+
+[params]
+  BookTheme = "light"
+  BookSection = "posts"
+  BookToC = true
+  BookSearch = true
+  BookDateFormat = "January 2, 2006"
+  description = "A practical guide to careers, day-to-day work, earning potential, entry paths, risks, and long-term outlook."
+  homeIntro = "Browse careers in a flat, easy-to-maintain library. Each page covers what the role is, what a normal day looks like, what it pays, how to get there, the risks, and how the field may change over the next decade."

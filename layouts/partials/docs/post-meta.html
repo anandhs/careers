@@ -1,0 +1,7 @@
+{{ with .Date }}
+  <div class="flex align-center text-small book-post-date">
+    <img src="{{ partial "docs/icon" "calendar" }}" class="book-icon" alt="" />
+    <span>{{ partial "docs/date" (dict "Date" . "Format" $.Site.Params.BookDateFormat) }}</span>
+  </div>
+{{ end }}
+

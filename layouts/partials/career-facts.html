@@ -1,0 +1,30 @@
+{{ $hasFacts := or .Params.category (or .Params.salary_range .Params.featured_companies) }}
+{{ if $hasFacts }}
+<section class="career-facts">
+  <div class="career-facts-grid">
+    {{ with .Params.category }}
+    <div class="career-fact">
+      <div class="career-fact-label">Category</div>
+      <div class="career-fact-value"><a href="{{ (printf "categories/%s/" (urlize .)) | relURL }}">{{ . }}</a></div>
+    </div>
+    {{ end }}
+
+    {{ with .Params.salary_range }}
+    <div class="career-fact">
+      <div class="career-fact-label">Pay snapshot</div>
+      <div class="career-fact-value">{{ . }}</div>
+      {{ with $.Params.salary_scope }}<div class="career-fact-note">{{ . }}</div>{{ end }}
+      {{ with $.Params.salary_as_of }}<div class="career-fact-note">{{ . }}</div>{{ end }}
+    </div>
+    {{ end }}
+
+    {{ with .Params.featured_companies }}
+    <div class="career-fact">
+      <div class="career-fact-label">Example employers</div>
+      <div class="career-fact-value">{{ delimit . ", " }}</div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+

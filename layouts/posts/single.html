@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article class="markdown book-post career-post">
+  <h1>{{ partial "docs/title" . }}</h1>
+  {{ partial "docs/post-meta" . }}
+
+  <div class="career-chips">
+    {{ with .Params.category }}<a class="book-btn" href="{{ (printf "categories/%s/" (urlize .)) | relURL }}">{{ . }}</a>{{ end }}
+    {{ range .Params.tags }}<a class="book-btn" href="{{ (printf "tags/%s/" (urlize .)) | relURL }}">#{{ . }}</a>{{ end }}
+  </div>
+
+  {{ partial "career-facts.html" . }}
+
+  <div class="book-post-content markdown-inner">
+    {{- .Content -}}
+  </div>
+</article>
+{{ end }}
+
+{{ define "toc" }}
+  {{ partial "docs/toc" . }}
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "docs/post-prev-next" . }}
+{{ end }}
+

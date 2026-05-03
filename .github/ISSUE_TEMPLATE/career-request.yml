@@ -1,0 +1,61 @@
+name: Career request
+description: Request a new career article for the site.
+title: "[Career Request] "
+labels:
+  - career-request
+body:
+  - type: input
+    id: career_title
+    attributes:
+      label: Career title
+      description: The specific role you want an article for.
+      placeholder: Software Engineer
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Primary category
+      description: Pick the main career family for this role.
+      options:
+        - Technology
+        - Healthcare
+        - Engineering
+        - Business and Finance
+        - Education
+        - Skilled Trades
+        - Creative and Media
+        - Government and Public Service
+        - Science and Research
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: geography
+    attributes:
+      label: Geography for salary context
+      description: Helps the article choose the right pay framing.
+      placeholder: US national
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: Suggested tags
+      description: Comma-separated tags if you already know how the role should be classified.
+      placeholder: problem-solving, remote-friendly, licensure-required
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Extra notes
+      description: Optional context, audience notes, or things the article should cover.
+      placeholder: Include common entry paths for people without a 4-year degree.
+    validations:
+      required: false
+

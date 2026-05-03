@@ -1,0 +1,79 @@
+name: Generate career post draft
+
+on:
+  issues:
+    types:
+      - opened
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  generate:
+    if: contains(join(github.event.issue.labels.*.name, ','), 'career-request')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.155.3'
+          extended: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate draft post from issue
+        id: generate
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-4o-mini-search-preview
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: node scripts/generate-career-post.js
+
+      - name: Validate Hugo build
+        run: hugo --minify --cleanDestinationDir
+
+      - name: Create pull request
+        id: cpr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "Add draft career post: ${{ steps.generate.outputs.post_title }}"
+          branch: "career-request/${{ steps.generate.outputs.slug }}-${{ github.event.issue.number }}"
+          title: "Add draft career post: ${{ steps.generate.outputs.post_title }}"
+          body: |
+            This PR was generated automatically from issue #${{ github.event.issue.number }}.
+
+            Generated file:
+            - `${{ steps.generate.outputs.post_path }}`
+
+            Source request:
+            - `${{ github.event.issue.title }}`
+
+            Notes:
+            - Generated using the site rules in `AGENTS.md`
+            - Created as a draft for human review before publishing
+          labels: |
+            automated-pr
+            draft-content
+
+      - name: Comment on issue with PR link
+        if: steps.cpr.outputs.pull-request-number
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `I generated a draft career post and opened PR #${{ steps.cpr.outputs.pull-request-number }} for review.`
+            });
+

@@ -24,6 +24,28 @@ To enable it in GitHub:
 3. Under `Build and deployment`, set `Source` to `GitHub Actions`.
 4. Push to `main` or run the `Deploy Hugo site to GitHub Pages` workflow manually.
 
+## Requesting new career articles
+
+This repo also supports a request-driven draft generation workflow.
+
+How it works:
+
+1. Open a GitHub issue using the `Career request` form.
+2. GitHub Actions reads the issue details.
+3. The workflow loads the site rules from `AGENTS.md`.
+4. OpenAI generates a draft post into `content/posts/`.
+5. The workflow opens a pull request for review.
+
+Required GitHub secret:
+
+- `OPENAI_API_KEY`
+
+Recommended behavior:
+
+- keep generated posts as `draft: true`
+- review the PR before merging
+- merge only after checking accuracy, references, and category/tag choices
+
 ## Run locally
 
 ```bash

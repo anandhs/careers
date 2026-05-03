@@ -59,61 +59,12 @@ function ensureRequiredSections(markdown) {
   }
 }
 
-function ensureFrontMatter(markdown) {
-  if (!markdown.startsWith("---\n")) {
-    fail("Generated post is missing front matter.");
-  }
-
-  const end = markdown.indexOf("\n---\n", 4);
-  if (end === -1) {
-    fail("Generated post front matter is not closed.");
-  }
-
-  const frontMatter = markdown.slice(4, end);
-  const requiredFields = [
-    "title:",
-    "date:",
-    "description:",
-    "category:",
-    "categories:",
-    "tags:",
-    "draft:",
-  ];
-
-  for (const field of requiredFields) {
-    if (!frontMatter.includes(field)) {
-      fail(`Generated front matter is missing field: ${field}`);
-    }
-  }
-
-  if (!/draft:\s*true/i.test(frontMatter)) {
-    fail("Generated post must be created with draft: true.");
-  }
-
-  const categoryMatch = frontMatter.match(/^category:\s*"?(.*?)"?$/m);
-  const categoriesMatch = frontMatter.match(/^categories:\s*\[(.*?)\]$/m);
-  if (categoryMatch && categoriesMatch) {
-    const category = categoryMatch[1].trim();
-    const categoriesRaw = categoriesMatch[1].trim();
-    if (!categoriesRaw.includes(category)) {
-      fail("Generated front matter must keep category and categories in sync.");
-    }
-  }
-}
-
 function ensureReferences(markdown) {
   const referencesSection = markdown.split("## More details (and references)")[1] || "";
   const urlMatches = referencesSection.match(/https?:\/\/[^\s)]+/g) || [];
   if (urlMatches.length < 2) {
     fail("Generated post must include at least 2 reference URLs.");
   }
-}
-
-function stripCodeFence(text) {
-  return text
-    .replace(/^```(?:markdown|md)?\s*/i, "")
-    .replace(/\s*```$/, "")
-    .trim() + "\n";
 }
 
 function extractTextFromResponse(data) {
@@ -140,6 +91,128 @@ function extractTextFromResponse(data) {
   return chunks.join("\n").trim();
 }
 
+function stripCodeFence(text) {
+  return text
+    .replace(/^```(?:json|markdown|md)?\s*/i, "")
+    .replace(/\s*```$/, "")
+    .trim();
+}
+
+function parseJsonPayload(text) {
+  try {
+    return JSON.parse(text);
+  } catch (error) {
+    fail(`Generated output was not valid JSON. Raw output: ${text}`);
+  }
+}
+
+function validateGeneratedPayload(payload) {
+  const requiredStringFields = [
+    "title",
+    "description",
+    "category",
+    "what_this_job_is",
+    "day_in_the_life",
+    "earning_potential",
+    "how_to_get_there",
+    "skills_that_help",
+    "leading_companies",
+    "risks_and_tradeoffs",
+    "next_10_year_outlook",
+    "what_to_know_before_choosing_it",
+    "more_details_and_references",
+  ];
+
+  for (const field of requiredStringFields) {
+    if (typeof payload[field] !== "string" || !payload[field].trim()) {
+      fail(`Generated JSON is missing required field: ${field}`);
+    }
+  }
+
+  if (!Array.isArray(payload.tags) || payload.tags.length === 0) {
+    fail("Generated JSON must include a non-empty tags array.");
+  }
+
+  const optionalArrayFields = ["featured_companies"];
+  for (const field of optionalArrayFields) {
+    if (payload[field] !== undefined && !Array.isArray(payload[field])) {
+      fail(`Generated JSON field must be an array when present: ${field}`);
+    }
+  }
+}
+
+function yamlString(value) {
+  return JSON.stringify(String(value));
+}
+
+function yamlArray(values) {
+  return `[${values.map((value) => JSON.stringify(String(value))).join(", ")}]`;
+}
+
+function composeMarkdown(payload) {
+  const frontMatter = [
+    "---",
+    `title: ${yamlString(payload.title)}`,
+    "date: 2026-05-03",
+    `description: ${yamlString(payload.description)}`,
+    `category: ${yamlString(payload.category)}`,
+    `categories: ${yamlArray([payload.category])}`,
+    `tags: ${yamlArray(payload.tags)}`,
+    "draft: true",
+    `salary_range: ${yamlString(payload.salary_range || "")}`,
+    `salary_scope: ${yamlString(payload.salary_scope || "")}`,
+    `salary_as_of: ${yamlString(payload.salary_as_of || "")}`,
+    `featured_companies: ${yamlArray(payload.featured_companies || [])}`,
+    "---",
+    "",
+  ].join("\n");
+
+  const body = [
+    "## What this job is",
+    "",
+    payload.what_this_job_is.trim(),
+    "",
+    "## Day in the life",
+    "",
+    payload.day_in_the_life.trim(),
+    "",
+    "## Earning potential",
+    "",
+    payload.earning_potential.trim(),
+    "",
+    "## How to get there",
+    "",
+    payload.how_to_get_there.trim(),
+    "",
+    "## Skills that help",
+    "",
+    payload.skills_that_help.trim(),
+    "",
+    "## Leading companies",
+    "",
+    payload.leading_companies.trim(),
+    "",
+    "## Risks and tradeoffs",
+    "",
+    payload.risks_and_tradeoffs.trim(),
+    "",
+    "## Next 10 year outlook",
+    "",
+    payload.next_10_year_outlook.trim(),
+    "",
+    "## What to know before choosing it",
+    "",
+    payload.what_to_know_before_choosing_it.trim(),
+    "",
+    "## More details (and references)",
+    "",
+    payload.more_details_and_references.trim(),
+    "",
+  ].join("\n");
+
+  return `${frontMatter}${body}`;
+}
+
 const careerTitle = getField(issueBody, "Career title") || issue.title.replace(/^\[Career Request\]\s*/i, "").trim();
 const category = getField(issueBody, "Primary category");
 const geography = getField(issueBody, "Geography for salary context");
@@ -161,7 +234,7 @@ if (fs.existsSync(filePath)) {
 }
 
 const prompt = `
-You are generating a Hugo career article for a GitHub repository.
+You are generating structured data for a Hugo career article in a GitHub repository.
 
 Follow the repository rules below exactly.
 
@@ -176,17 +249,37 @@ CAREER REQUEST:
 - Extra notes: ${notes || "None provided"}
 
 OUTPUT RULES:
-- Return only the final Markdown file content.
-- Include valid Hugo front matter at the top.
-- Set draft: true.
-- Keep category and categories in sync.
-- Use today's date: 2026-05-03.
-- Use the exact section order required by AGENTS.md.
+- Return only valid JSON.
+- Do not wrap the JSON in markdown code fences.
+- Use today's date context: 2026-05-03.
 - Write for students and early career explorers.
 - Include 2 to 3 relevant references with direct URLs.
 - Prefer official or primary references where possible.
 - Use the salary geography provided above when framing pay.
-- Do not include any explanation before or after the Markdown.
+- Keep tags practical and short.
+- Keep the primary category aligned with the request unless the request is clearly wrong.
+
+Return this exact JSON shape:
+{
+  "title": "Career title",
+  "description": "Short summary for the article",
+  "category": "Primary category",
+  "tags": ["tag-one", "tag-two"],
+  "salary_range": "string or empty string",
+  "salary_scope": "string or empty string",
+  "salary_as_of": "string or empty string",
+  "featured_companies": ["Company A", "Company B", "Company C"],
+  "what_this_job_is": "Markdown-safe prose",
+  "day_in_the_life": "Markdown-safe prose",
+  "earning_potential": "Markdown-safe prose",
+  "how_to_get_there": "Markdown-safe prose",
+  "skills_that_help": "Markdown-safe prose",
+  "leading_companies": "Markdown-safe prose",
+  "risks_and_tradeoffs": "Markdown-safe prose",
+  "next_10_year_outlook": "Markdown-safe prose",
+  "what_to_know_before_choosing_it": "Markdown-safe prose",
+  "more_details_and_references": "Markdown-safe prose with 2 to 3 direct URLs"
+}
 `.trim();
 
 async function generate() {
@@ -215,8 +308,10 @@ async function generate() {
     fail(`OpenAI API returned no text output. Raw response: ${JSON.stringify(data)}`);
   }
 
-  const markdown = stripCodeFence(text);
-  ensureFrontMatter(markdown);
+  const payload = parseJsonPayload(stripCodeFence(text));
+  validateGeneratedPayload(payload);
+
+  const markdown = composeMarkdown(payload);
   ensureRequiredSections(markdown);
   ensureReferences(markdown);
 

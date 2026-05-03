@@ -4,6 +4,7 @@ on:
   issues:
     types:
       - opened
+      - labeled
 
 permissions:
   contents: write
@@ -12,7 +13,7 @@ permissions:
 
 jobs:
   generate:
-    if: contains(join(github.event.issue.labels.*.name, ','), 'career-request')
+    if: contains(join(github.event.issue.labels.*.name, ','), 'career-request') || startsWith(github.event.issue.title, '[Career Request]')
     runs-on: ubuntu-latest
 
     steps:
@@ -76,4 +77,3 @@ jobs:
               issue_number: context.issue.number,
               body: `I generated a draft career post and opened PR #${{ steps.cpr.outputs.pull-request-number }} for review.`
             });
-

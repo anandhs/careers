@@ -116,6 +116,30 @@ function stripCodeFence(text) {
     .trim() + "\n";
 }
 
+function extractTextFromResponse(data) {
+  if (typeof data.output_text === "string" && data.output_text.trim()) {
+    return data.output_text;
+  }
+
+  if (!Array.isArray(data.output)) {
+    return "";
+  }
+
+  const chunks = [];
+
+  for (const item of data.output) {
+    if (!Array.isArray(item.content)) continue;
+
+    for (const contentItem of item.content) {
+      if (contentItem.type === "output_text" && typeof contentItem.text === "string") {
+        chunks.push(contentItem.text);
+      }
+    }
+  }
+
+  return chunks.join("\n").trim();
+}
+
 const careerTitle = getField(issueBody, "Career title") || issue.title.replace(/^\[Career Request\]\s*/i, "").trim();
 const category = getField(issueBody, "Primary category");
 const geography = getField(issueBody, "Geography for salary context");
@@ -185,10 +209,10 @@ async function generate() {
   }
 
   const data = await response.json();
-  const text = data.output_text;
+  const text = extractTextFromResponse(data);
 
   if (!text) {
-    fail("OpenAI API returned no output_text.");
+    fail(`OpenAI API returned no text output. Raw response: ${JSON.stringify(data)}`);
   }
 
   const markdown = stripCodeFence(text);

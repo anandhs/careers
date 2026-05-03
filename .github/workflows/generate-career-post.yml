@@ -35,7 +35,7 @@ jobs:
         id: generate
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: gpt-4o-mini-search-preview
+          OPENAI_MODEL: gpt-4o-mini
           GITHUB_EVENT_PATH: ${{ github.event_path }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: node scripts/generate-career-post.js

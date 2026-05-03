@@ -9,7 +9,7 @@ function fail(message) {
 const repoRoot = process.cwd();
 const eventPath = process.env.GITHUB_EVENT_PATH;
 const apiKey = process.env.OPENAI_API_KEY;
-const model = process.env.OPENAI_MODEL || "gpt-4o-mini-search-preview";
+const model = process.env.OPENAI_MODEL || "gpt-4o-mini";
 
 if (!eventPath) fail("GITHUB_EVENT_PATH is required.");
 if (!apiKey) fail("OPENAI_API_KEY is required.");
@@ -210,4 +210,3 @@ async function generate() {
 generate().catch((error) => {
   fail(error.stack || error.message);
 });
-

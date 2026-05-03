@@ -40,6 +40,11 @@ Required GitHub secret:
 
 - `OPENAI_API_KEY`
 
+Optional environment override in the workflow:
+
+- `OPENAI_MODEL`
+  Default is `gpt-4o-mini`
+
 Recommended behavior:
 
 - keep generated posts as `draft: true`

@@ -10,6 +10,7 @@ const repoRoot = process.cwd();
 const eventPath = process.env.GITHUB_EVENT_PATH;
 const apiKey = process.env.OPENAI_API_KEY;
 const model = process.env.OPENAI_MODEL || "gpt-4o-mini";
+const siteBaseUrl = process.env.SITE_BASE_URL || "";
 
 if (!eventPath) fail("GITHUB_EVENT_PATH is required.");
 if (!apiKey) fail("OPENAI_API_KEY is required.");
@@ -233,6 +234,18 @@ if (fs.existsSync(filePath)) {
   filePath = path.join(contentDir, fileName);
 }
 
+function buildPostUrl() {
+  if (!siteBaseUrl) return "";
+
+  const postSlug = path.parse(fileName).name;
+
+  try {
+    return new URL(`posts/${postSlug}/`, siteBaseUrl).toString();
+  } catch (error) {
+    return "";
+  }
+}
+
 const prompt = `
 You are generating structured data for a Hugo career article in a GitHub repository.
 
@@ -321,6 +334,7 @@ async function generate() {
     fs.appendFileSync(process.env.GITHUB_OUTPUT, `slug=${slug}\n`);
     fs.appendFileSync(process.env.GITHUB_OUTPUT, `post_path=content/posts/${fileName}\n`);
     fs.appendFileSync(process.env.GITHUB_OUTPUT, `post_title=${careerTitle}\n`);
+    fs.appendFileSync(process.env.GITHUB_OUTPUT, `post_url=${buildPostUrl()}\n`);
   }
 
   console.log(`Generated ${filePath}`);

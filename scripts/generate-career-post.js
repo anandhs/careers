@@ -158,7 +158,7 @@ function composeMarkdown(payload) {
     `category: ${yamlString(payload.category)}`,
     `categories: ${yamlArray([payload.category])}`,
     `tags: ${yamlArray(payload.tags)}`,
-    "draft: true",
+    "draft: false",
     `salary_range: ${yamlString(payload.salary_range || "")}`,
     `salary_scope: ${yamlString(payload.salary_scope || "")}`,
     `salary_as_of: ${yamlString(payload.salary_as_of || "")}`,

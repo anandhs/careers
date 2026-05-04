@@ -26,15 +26,16 @@ To enable it in GitHub:
 
 ## Requesting new career articles
 
-This repo also supports a request-driven draft generation workflow.
+This repo also supports a request-driven generation workflow.
 
 How it works:
 
 1. Open a GitHub issue using the `Career request` form.
 2. GitHub Actions reads the issue details.
 3. The workflow loads the site rules from `AGENTS.md`.
-4. OpenAI generates a draft post into `content/posts/`.
-5. The workflow opens a pull request for review.
+4. OpenAI generates a post into `content/posts/`.
+5. The workflow validates the Hugo build.
+6. The workflow commits the post directly to `main`.
 
 Required GitHub secret:
 
@@ -45,11 +46,11 @@ Optional environment override in the workflow:
 - `OPENAI_MODEL`
   Default is `gpt-4o-mini`
 
-Recommended behavior:
+Current behavior:
 
-- keep generated posts as `draft: true`
-- review the PR before merging
-- merge only after checking accuracy, references, and category/tag choices
+- generated posts are published with `draft: false`
+- no review PR is opened
+- the workflow comments on the source issue with the published file path and commit SHA
 
 ## Run locally
 

@@ -40,7 +40,7 @@ featured_companies: ["Company A", "Company B", "Company C"]
 3. `## Earning potential`
 4. `## How to get there`
 5. `## Skills that help`
-6. `## Helpful courses to take in high school and college
+6. `## Helpful courses to take in high school and college`
 7. `## Leading companies`
 8. `## Risks and tradeoffs`
 9. `## Next 10 year outlook`

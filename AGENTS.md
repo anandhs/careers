@@ -40,11 +40,12 @@ featured_companies: ["Company A", "Company B", "Company C"]
 3. `## Earning potential`
 4. `## How to get there`
 5. `## Skills that help`
-6. `## Leading companies`
-7. `## Risks and tradeoffs`
-8. `## Next 10 year outlook`
-9. `## What to know before choosing it`
-10. `## More details (and references)`
+6. `## Helpful courses to take in high school and college
+7. `## Leading companies`
+8. `## Risks and tradeoffs`
+9. `## Next 10 year outlook`
+10. `## What to know before choosing it`
+11. `## More details (and references)`
 
 ## Writing guidance
 
@@ -55,3 +56,4 @@ featured_companies: ["Company A", "Company B", "Company C"]
 - Keep the risks section honest and specific.
 - Keep the 10-year outlook thoughtful, not overconfident.
 - Prefer official or primary references when possible.
+- Whenever a new career is added, add the accurate and correct day it was added

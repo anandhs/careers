@@ -27,11 +27,11 @@ The earning potential for car technicians varies based on experience, location, 
 
 To become a car technician, one typically needs a high school diploma or equivalent, followed by vocational training or an associate degree in automotive technology. Certification from organizations such as the National Institute for Automotive Service Excellence (ASE) can enhance job prospects.
 
-## Helpful courses in high school and college
+## A course plan through high school and college
 
-Helpful high school courses include automotive technology, shop classes, basic electronics, algebra, physics, and computer fundamentals. These courses help students get comfortable with tools, measurements, mechanical systems, and the growing role of diagnostics software.
+In high school, a practical plan is to take automotive technology or shop classes if available, along with algebra, basic physics, electronics, and computer fundamentals. Those courses build comfort with measurements, tools, mechanical systems, and the software-based diagnostics that modern vehicles increasingly rely on.
 
-In college or technical school, useful courses include engine repair, brake systems, steering and suspension, electrical systems, diagnostics, heating and air conditioning, and hybrid or electric vehicle technology. Business or customer service courses can also help technicians who may later move into service advising or shop management.
+After high school, many students move into a technical program or associate degree in automotive technology. A strong sequence includes engine repair, brake systems, steering and suspension, electrical systems, diagnostics, heating and air conditioning, and later hybrid or electric vehicle technology. Business, communication, or customer service courses can also help if you may want to move into service advising, shop leadership, or eventually run your own business.
 
 ## Skills that help
 

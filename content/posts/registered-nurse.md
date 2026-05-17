@@ -50,11 +50,11 @@ Common paths into registered nursing include:
 
 Many employers increasingly prefer or require a BSN, especially for hospital roles and advancement.
 
-## Helpful courses in high school and college
+## A course plan through high school and college
 
-Helpful high school courses include biology, chemistry, anatomy if offered, health science, psychology, and statistics. English and communication classes matter too, because nurses spend a lot of time explaining care clearly to patients and families.
+In high school, a strong path includes biology, chemistry, anatomy or health science if offered, psychology, and statistics. English and communication classes are also important because nurses explain care plans, document clearly, and work closely with patients and families. If your school offers health occupations or clinical observation programs, those can be especially useful.
 
-In college, nursing students often take anatomy and physiology, microbiology, chemistry, nutrition, psychology, pharmacology, and clinical nursing courses. Public health, child development, and medical ethics can also be useful depending on the setting where someone wants to work.
+In college, the plan usually begins with foundational sciences such as anatomy and physiology, microbiology, chemistry, and nutrition. From there, nursing students move into pharmacology, patient assessment, adult health, maternal-child nursing, mental health nursing, and supervised clinical courses. Public health, child development, and medical ethics are also good additions because they widen your understanding of how care works across settings.
 
 ## Skills that help
 

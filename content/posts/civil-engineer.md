@@ -50,11 +50,11 @@ A common path looks like this:
 
 Licensure becomes especially important for engineers who provide services directly to the public or want to sign and seal work.
 
-## Helpful courses in high school and college
+## A course plan through high school and college
 
-Helpful high school courses include algebra, geometry, trigonometry, calculus if available, physics, computer-aided design, and environmental science. Engineering clubs, drafting classes, and project-based STEM programs can also provide a strong early foundation.
+In high school, a solid course plan includes algebra, geometry, trigonometry, calculus if available, physics, and environmental science. Drafting, computer-aided design, and engineering electives are also useful because they help students get comfortable with technical drawings, design thinking, and project-based work.
 
-In college, common helpful courses include statics, dynamics, mechanics of materials, surveying, fluid mechanics, structural analysis, transportation engineering, geotechnical engineering, and environmental engineering. Project management and technical writing courses are also useful because civil engineers work across many disciplines and stakeholders.
+In college, the path usually starts with calculus, physics, chemistry, and introductory engineering courses before moving into statics, dynamics, mechanics of materials, surveying, and fluid mechanics. Later coursework often includes structural analysis, geotechnical engineering, transportation engineering, water resources, and environmental engineering. Technical writing and project management are smart additions because civil engineers do much more than calculations alone.
 
 ## Skills that help
 

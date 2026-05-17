@@ -29,9 +29,17 @@ Most Credit Analysts hold at least a bachelor's degree in finance, accounting, o
 
 ## A course plan through high school and college
 
-In high school, a strong start includes algebra, statistics, economics, accounting, business, and writing-intensive classes. If available, spreadsheet or data analysis coursework is especially useful because credit analysts spend a lot of time interpreting numbers and communicating decisions clearly.
+### Grades 9-10
 
-In college, the plan usually starts with introductory accounting, economics, statistics, and finance before moving into financial statement analysis, corporate finance, business law, and risk management. Courses in Excel, financial modeling, banking, or commercial lending are especially helpful for students who want to work in lending, underwriting, or corporate credit.
+Start with algebra and writing-intensive classes, then add introductory business or personal finance courses if available. These build the habit of working carefully with numbers and explaining conclusions clearly.
+
+### Grades 11-12
+
+Add statistics, economics, accounting, and spreadsheet-based coursework when possible. These classes are especially useful because credit analysis depends on reading financial information carefully and spotting patterns in the numbers.
+
+### College years
+
+Start with introductory accounting, economics, statistics, and finance before moving into financial statement analysis, corporate finance, business law, and risk management. Courses in Excel, financial modeling, banking, or commercial lending are especially helpful for students who want to work in lending, underwriting, or corporate credit.
 
 ## Skills that help
 

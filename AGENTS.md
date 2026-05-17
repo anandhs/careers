@@ -52,6 +52,7 @@ featured_companies: ["Company A", "Company B", "Company C"]
 - Write for students and early career explorers first.
 - Use clear, practical language.
 - In the course-plan section, describe a practical progression through high school and college.
+- Split the course plan into clear stages such as `Grades 9-10`, `Grades 11-12`, and `College years` when possible.
 - Keep the plan realistic and broadly applicable, not overly specialized.
 - Keep skills concrete and learnable.
 - Do not use personality-type matching.

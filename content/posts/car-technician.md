@@ -29,9 +29,17 @@ To become a car technician, one typically needs a high school diploma or equival
 
 ## A course plan through high school and college
 
-In high school, a practical plan is to take automotive technology or shop classes if available, along with algebra, basic physics, electronics, and computer fundamentals. Those courses build comfort with measurements, tools, mechanical systems, and the software-based diagnostics that modern vehicles increasingly rely on.
+### Grades 9-10
 
-After high school, many students move into a technical program or associate degree in automotive technology. A strong sequence includes engine repair, brake systems, steering and suspension, electrical systems, diagnostics, heating and air conditioning, and later hybrid or electric vehicle technology. Business, communication, or customer service courses can also help if you may want to move into service advising, shop leadership, or eventually run your own business.
+If possible, start with shop classes, basic electronics, algebra, and computer fundamentals. These courses help build comfort with tools, measurements, and the increasingly digital side of vehicle repair.
+
+### Grades 11-12
+
+Add automotive technology if your school offers it, along with basic physics and any hands-on career and technical education courses. These classes can make the jump into a technical program much smoother.
+
+### College or technical school years
+
+Many students move into a technical program or associate degree in automotive technology. A strong sequence includes engine repair, brake systems, steering and suspension, electrical systems, diagnostics, heating and air conditioning, and later hybrid or electric vehicle technology. Business, communication, or customer service courses also help if you may want to move into service advising, shop leadership, or eventually run your own business.
 
 ## Skills that help
 

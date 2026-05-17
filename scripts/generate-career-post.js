@@ -278,6 +278,7 @@ OUTPUT RULES:
 - Keep tags practical and short.
 - Keep the primary category aligned with the request unless the request is clearly wrong.
 - In the course-plan section, outline a practical path through high school and college, including relevant examples of courses at each stage when appropriate.
+- Split that section into clear stages such as "Grades 9-10", "Grades 11-12", and "College years" when possible.
 
 Return this exact JSON shape:
 {

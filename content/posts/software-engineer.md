@@ -50,9 +50,17 @@ The most important thing is being able to show that you can build real things, r
 
 ## A course plan through high school and college
 
-In high school, a strong plan is to take computer science if your school offers it, along with algebra, geometry, statistics, and calculus when possible. Physics can help with problem-solving discipline, and writing classes matter more than many students expect because engineers spend a lot of time explaining ideas clearly. If electives are available, robotics, engineering, or web development can give you useful project experience early.
+### Grades 9-10
 
-In college, the usual path starts with introductory programming and math, then moves into data structures, algorithms, databases, and computer systems. After that, students often add software engineering, networking, operating systems, and electives tied to their interests, such as cybersecurity, cloud computing, AI, mobile development, or human-computer interaction. A good plan is to balance core theory with project-heavy courses that let you build real software.
+Focus on algebra, geometry, introductory computer science if available, and strong writing classes. If your school offers robotics, engineering, or web development electives, those are great early opportunities to start building things.
+
+### Grades 11-12
+
+Build toward computer science, statistics, physics, and calculus when possible. Keep taking writing-heavy classes too, because software engineers spend a lot of time explaining decisions, documenting systems, and working with teams.
+
+### College years
+
+Start with introductory programming and math, then move into data structures, algorithms, databases, and computer systems. After that, add software engineering, networking, operating systems, and electives tied to your interests, such as cybersecurity, cloud computing, AI, mobile development, or human-computer interaction. A strong plan balances core theory with project-heavy courses that let you build real software.
 
 ## Skills that help
 

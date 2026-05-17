@@ -52,9 +52,17 @@ Many employers increasingly prefer or require a BSN, especially for hospital rol
 
 ## A course plan through high school and college
 
-In high school, a strong path includes biology, chemistry, anatomy or health science if offered, psychology, and statistics. English and communication classes are also important because nurses explain care plans, document clearly, and work closely with patients and families. If your school offers health occupations or clinical observation programs, those can be especially useful.
+### Grades 9-10
 
-In college, the plan usually begins with foundational sciences such as anatomy and physiology, microbiology, chemistry, and nutrition. From there, nursing students move into pharmacology, patient assessment, adult health, maternal-child nursing, mental health nursing, and supervised clinical courses. Public health, child development, and medical ethics are also good additions because they widen your understanding of how care works across settings.
+Build a strong science base with biology and health-related classes if your school offers them. English matters too, because nurses explain care clearly and document accurately.
+
+### Grades 11-12
+
+Add chemistry, psychology, statistics, and anatomy or health science if available. If your school has health occupations, clinical observation, or dual-credit health courses, they can give you a more realistic preview of the profession.
+
+### College years
+
+Begin with anatomy and physiology, microbiology, chemistry, and nutrition. From there, move into pharmacology, patient assessment, adult health, maternal-child nursing, mental health nursing, and supervised clinical courses. Public health, child development, and medical ethics are also useful because they widen your understanding of care across settings.
 
 ## Skills that help
 

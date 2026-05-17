@@ -52,9 +52,17 @@ Licensure becomes especially important for engineers who provide services direct
 
 ## A course plan through high school and college
 
-In high school, a solid course plan includes algebra, geometry, trigonometry, calculus if available, physics, and environmental science. Drafting, computer-aided design, and engineering electives are also useful because they help students get comfortable with technical drawings, design thinking, and project-based work.
+### Grades 9-10
 
-In college, the path usually starts with calculus, physics, chemistry, and introductory engineering courses before moving into statics, dynamics, mechanics of materials, surveying, and fluid mechanics. Later coursework often includes structural analysis, geotechnical engineering, transportation engineering, water resources, and environmental engineering. Technical writing and project management are smart additions because civil engineers do much more than calculations alone.
+Start with algebra and geometry, then add drafting, environmental science, or introductory engineering electives if your school offers them. These classes build the habit of thinking visually and solving practical problems.
+
+### Grades 11-12
+
+Add trigonometry, physics, and calculus when possible. Computer-aided design and project-based STEM courses are especially helpful because they mirror the technical and collaborative side of engineering work.
+
+### College years
+
+Start with calculus, physics, chemistry, and introductory engineering courses before moving into statics, dynamics, mechanics of materials, surveying, and fluid mechanics. Later coursework often includes structural analysis, geotechnical engineering, transportation engineering, water resources, and environmental engineering. Technical writing and project management are smart additions because civil engineers do much more than calculations alone.
 
 ## Skills that help
 

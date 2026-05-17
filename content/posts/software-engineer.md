@@ -48,6 +48,12 @@ There is no single path into software engineering, but common routes include:
 
 The most important thing is being able to show that you can build real things, reason through problems, and learn new tools quickly.
 
+## Helpful courses in high school and college
+
+Helpful high school courses include computer science, algebra, geometry, statistics, calculus if available, and any classes that strengthen writing or problem-solving. Robotics, engineering, and web development electives can also be useful because they give students practice building real things.
+
+In college, common helpful courses include programming, data structures, algorithms, databases, computer systems, software engineering, and networking. Depending on the path, courses in cybersecurity, cloud computing, artificial intelligence, human-computer interaction, or mobile development can also be valuable.
+
 ## Skills that help
 
 Helpful skills include:

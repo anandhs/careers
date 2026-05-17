@@ -27,6 +27,12 @@ The earning potential for Credit Analysts varies based on experience, location, 
 
 Most Credit Analysts hold at least a bachelor's degree in finance, accounting, or a related field. Internships and entry-level positions in financial services can provide valuable experience. Additional certifications, like the Chartered Financial Analyst (CFA), can enhance career prospects.
 
+## Helpful courses in high school and college
+
+Helpful high school courses include algebra, statistics, economics, accounting, business, and strong writing classes. Spreadsheet-based classes or any coursework that teaches data interpretation can also be useful, because credit analysis depends on reading numbers carefully and explaining conclusions clearly.
+
+In college, common helpful courses include accounting, corporate finance, financial statement analysis, economics, business law, statistics, and risk management. Courses in Excel, financial modeling, and banking can be especially useful for students who want to move into lending or corporate credit roles.
+
 ## Skills that help
 
 Key skills include strong analytical abilities, attention to detail, proficiency in financial modeling, and effective communication skills. Familiarity with financial software and regulatory knowledge is also beneficial.

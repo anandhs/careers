@@ -39,8 +39,8 @@ featured_companies: ["Company A", "Company B", "Company C"]
 2. `## Day in the life`
 3. `## Earning potential`
 4. `## How to get there`
-5. `## Skills that help`
-6. `## Helpful courses to take in high school and college`
+5. `## Helpful courses in high school and college`
+6. `## Skills that help`
 7. `## Leading companies`
 8. `## Risks and tradeoffs`
 9. `## Next 10 year outlook`
@@ -51,6 +51,8 @@ featured_companies: ["Company A", "Company B", "Company C"]
 
 - Write for students and early career explorers first.
 - Use clear, practical language.
+- In the coursework section, include both high school and college examples when relevant.
+- Keep course suggestions realistic and broadly applicable, not overly specialized.
 - Keep skills concrete and learnable.
 - Do not use personality-type matching.
 - Keep the risks section honest and specific.

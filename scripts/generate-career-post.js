@@ -45,6 +45,7 @@ function ensureRequiredSections(markdown) {
     "## Day in the life",
     "## Earning potential",
     "## How to get there",
+    "## Helpful courses in high school and college",
     "## Skills that help",
     "## Leading companies",
     "## Risks and tradeoffs",
@@ -116,6 +117,7 @@ function validateGeneratedPayload(payload) {
     "day_in_the_life",
     "earning_potential",
     "how_to_get_there",
+    "helpful_courses_in_high_school_and_college",
     "skills_that_help",
     "leading_companies",
     "risks_and_tradeoffs",
@@ -184,6 +186,10 @@ function composeMarkdown(payload) {
     "## How to get there",
     "",
     payload.how_to_get_there.trim(),
+    "",
+    "## Helpful courses in high school and college",
+    "",
+    payload.helpful_courses_in_high_school_and_college.trim(),
     "",
     "## Skills that help",
     "",
@@ -271,6 +277,7 @@ OUTPUT RULES:
 - Use the salary geography provided above when framing pay.
 - Keep tags practical and short.
 - Keep the primary category aligned with the request unless the request is clearly wrong.
+- In the coursework section, include relevant examples of both high school and college courses when appropriate.
 
 Return this exact JSON shape:
 {
@@ -286,6 +293,7 @@ Return this exact JSON shape:
   "day_in_the_life": "Markdown-safe prose",
   "earning_potential": "Markdown-safe prose",
   "how_to_get_there": "Markdown-safe prose",
+  "helpful_courses_in_high_school_and_college": "Markdown-safe prose",
   "skills_that_help": "Markdown-safe prose",
   "leading_companies": "Markdown-safe prose",
   "risks_and_tradeoffs": "Markdown-safe prose",

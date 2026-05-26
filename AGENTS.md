@@ -39,7 +39,7 @@ featured_companies: ["Company A", "Company B", "Company C"]
 2. `## Day in the life`
 3. `## Earning potential`
 4. `## How to get there`
-5. `## A course plan through high school and college`
+5. `## A course plan depending if the person is in high school, college, or post college`
 6. `## Skills that help`
 7. `## Leading companies`
 8. `## Risks and tradeoffs`

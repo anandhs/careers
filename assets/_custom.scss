@@ -89,6 +89,22 @@
   font-size: 0.9rem;
 }
 
+.career-submit-cta {
+  margin: 1.5rem 0 2rem;
+  padding: 1.25rem 1.25rem 1rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 0.75rem;
+  background: var(--body-background);
+}
+
+.career-submit-cta h2 {
+  margin: 0 0 0.5rem;
+}
+
+.career-submit-cta p {
+  margin: 0.5rem 0;
+}
+
 @media (max-width: 56rem) {
   .career-facts-grid {
     grid-template-columns: 1fr;

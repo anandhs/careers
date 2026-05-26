@@ -49,6 +49,11 @@ disablePathToLower = true
     url = "/about/"
     weight = 5
 
+  [[menu.before]]
+    name = "Submit a career"
+    url = "https://github.com/anandhs/careers/issues/new?template=career-request.yml"
+    weight = 6
+
 [params]
   BookTheme = "light"
   BookSection = "posts"

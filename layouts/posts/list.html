@@ -5,6 +5,12 @@
   </article>
   {{ end }}
 
+  <section class="career-submit-cta">
+    <h2>Don’t see a career yet?</h2>
+    <p>Request a new career page and the site will generate it through the existing publishing workflow.</p>
+    <p><a class="book-btn" href="https://github.com/anandhs/careers/issues/new?template=career-request.yml">Submit a career request</a></p>
+  </section>
+
   {{ range .Paginator.Pages.ByDate.Reverse }}
   <article class="book-post markdown career-list-item">
     <h2>
@@ -43,4 +49,3 @@
 {{ define "footer" }}
   {{ partial "docs/pagination.html" . }}
 {{ end }}
-

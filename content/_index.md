@@ -14,6 +14,7 @@ Career Atlas is a practical library of career guides. Each page explains what th
 - [Browse by category](/careers/categories/)
 - [Browse by tag](/careers/tags/)
 - [About this site](/careers/about/)
+- [Submit a career request](https://github.com/anandhs/careers/issues/new?template=career-request.yml)
 
 ## How to use this site
 
@@ -23,3 +24,6 @@ Use **tags** when you want to compare jobs across fields, such as `remote-friend
 
 Each page follows the same structure so it is easy to compare roles side by side.
 
+## Want a career added?
+
+If you do not see a career yet, you can [submit a request here](https://github.com/anandhs/careers/issues/new?template=career-request.yml). New requests flow into the site's generation workflow automatically.
